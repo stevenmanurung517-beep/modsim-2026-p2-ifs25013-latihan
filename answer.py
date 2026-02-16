@@ -61,14 +61,16 @@ elif target == "q6":
 elif target == "q7":
     cnt = {q: (data[q] == "TS").sum() for q in questions}
     mx = max(cnt.values())
-    q = min(q for q in questions if cnt[q] == mx)
+    kandidat = [q for q in questions if cnt[q] == mx]
+    q = sorted(kandidat, key=lambda x: int(x[1:]))[0]
     print(f"{q}|{mx}|{pct(mx, N)}")
 
 # q8
 elif target == "q8":
     cnt = {q: (data[q] == "TS").sum() for q in questions}
     mx = max(cnt.values())
-    q = min(q for q in questions if cnt[q] == mx)
+    kandidat = [q for q in questions if cnt[q] == mx]
+    q = sorted(kandidat, key=lambda x: int(x[1:]))[0]
     print(f"{q}|{mx}|{pct(mx, N)}")
 
 
